@@ -1,0 +1,14 @@
+{
+  "Users": [
+    {
+      "Name": "Yehia",
+      "MobileNumber": "01098784032",
+      "Password": "Yehia@123"
+    }
+  ],
+
+  "Headers": {
+    "EnglishSignIn": "Sign in",
+    "ArabicSignIn": "تسجيل الدخول"
+  }
+}

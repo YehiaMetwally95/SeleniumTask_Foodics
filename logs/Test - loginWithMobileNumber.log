@@ -1,0 +1,29 @@
+[INFO] - The Element [Amazon.eg] is Displayed - - [02:19:15] - LogHelper 
+[INFO] - Soft Asserting condition is True - - [02:19:15] - LogHelper 
+[INFO] - Soft Assertion Passed - - [02:19:15] - LogHelper 
+[INFO] - Hovering on Element [اختر لغة للتسوق. التحديد الحالي هو اللغة العربية. ] - - [02:19:16] - LogHelper 
+[INFO] - Clicking on Element [English - EN] - - [02:19:17] - LogHelper 
+[INFO] - Refreshing the current Browser Window - - [02:19:21] - LogHelper 
+[INFO] - Hovering on Element [By.id: nav-link-accountList] - - [02:19:22] - LogHelper 
+[INFO] - Clicking on Element [Sign in] - - [02:19:24] - LogHelper 
+[DEBUG] - Evaluating path: $['Headers']['EnglishSignIn'] - [02:19:24] - CompiledPath 
+[INFO] - Getting Test Data [Sign in] by Json Path [Headers.EnglishSignIn] - - [02:19:24] - LogHelper 
+[INFO] - Getting Text [Sign in] from Element located by [By.cssSelector: .a-box h1] - - [02:19:25] - LogHelper 
+[INFO] - Soft Asserting condition is True - - [02:19:25] - LogHelper 
+[INFO] - Soft Assertion Passed - - [02:19:25] - LogHelper 
+[DEBUG] - Evaluating path: $['Users'][0]['MobileNumber'] - [02:19:25] - CompiledPath 
+[INFO] - Getting Test Data [01098784032] by Json Path [Users[0].MobileNumber] - - [02:19:25] - LogHelper 
+[DEBUG] - Evaluating path: $['Users'][0]['Password'] - [02:19:25] - CompiledPath 
+[INFO] - Getting Test Data [Yehia@123] by Json Path [Users[0].Password] - - [02:19:25] - LogHelper 
+[INFO] - Clearing the Text on Element [Email or mobile phone number] - - [02:19:25] - LogHelper 
+[INFO] - Typing [01098784032] on Element [Email or mobile phone number] - - [02:19:26] - LogHelper 
+[INFO] - Clicking on Element [Continue] - - [02:19:28] - LogHelper 
+[INFO] - Clearing the Text on Element [Password] - - [02:19:28] - LogHelper 
+[INFO] - Typing [Yehia@123] on Element [Password] - - [02:19:28] - LogHelper 
+[INFO] - Clicking on Element [Sign in] - - [02:19:29] - LogHelper 
+[DEBUG] - Evaluating path: $['Users'][0]['Name'] - [02:19:29] - CompiledPath 
+[INFO] - Getting Test Data [Yehia] by Json Path [Users[0].Name] - - [02:19:29] - LogHelper 
+[INFO] - Getting Text [Hello, Yehia] from Element located by [By.id: nav-link-accountList-nav-line-1] - - [02:19:33] - LogHelper 
+[INFO] - Asserting actual result: [Hello, Yehia] equals expected result: [Hello, Yehia] - - [02:19:33] - LogHelper 
+[INFO] - Assertion Passed - - [02:19:33] - LogHelper 
+[INFO] - Capturing Screenshot for Succeeded Scenario - - [02:19:36] - LogHelper 
