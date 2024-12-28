@@ -40,7 +40,7 @@ jobs:
         run: >
           mvn clean test -Dtest="testCases.AmazonTests.AddProductsToCart,
           testCases.AmazonTests.CheckOutCart,
-          testCases.AmazonTests.FilterProducts"
+          testCases.AmazonTests.FilterProducts,
           testCases.AmazonTests.LoginWithValidUser"
           -DexecutionType="Remote"
           -DbrowserType="Chrome"
@@ -99,7 +99,7 @@ jobs:
         continue-on-error: true
         run: >
           mvn clean test -Dtest="testCases.AmazonTests.AddProductsToCart,
-          testCases.AmazonTests.FilterProducts"
+          testCases.AmazonTests.FilterProducts,
           testCases.AmazonTests.LoginWithValidUser"
           -DexecutionType="Remote"
           -DbrowserType="Edge"
@@ -157,7 +157,7 @@ jobs:
         continue-on-error: true
         run: >
           mvn clean test -Dtest="testCases.AmazonTests.AddProductsToCart,
-          testCases.AmazonTests.FilterProducts"
+          testCases.AmazonTests.FilterProducts,
           testCases.AmazonTests.LoginWithValidUser"
           -DexecutionType="Remote"
           -DbrowserType="Firefox"
