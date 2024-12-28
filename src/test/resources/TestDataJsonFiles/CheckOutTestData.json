@@ -1,0 +1,45 @@
+{
+  "AddressDetails": {
+    "Country": "EG",
+    "FullName": "Yehia Metwally",
+    "MobileNumber": "1098784032",
+    "StreetName": "My Street",
+    "BuildingName" : "My Building",
+    "AreaName": "Maadi",
+    "DistrictName": "Hadayek El-Maadi",
+    "Landmark": "My Landmark",
+    "AddressType": "Office"
+  },
+
+  "PaymentDetails": {
+    "PaymentType": "Buy Now/Pay Later"
+  },
+
+  "Users": [
+    {
+      "Name": "Yehia",
+      "MobileNumber": "01098784032",
+      "Password": "Yehia@123"
+    }
+  ],
+
+  "Headers": {
+    "EnglishSignIn": "Sign in",
+    "ArabicSignIn": "تسجيل الدخول",
+    "EnglishProducts": "Video Games",
+    "ArabicProducts": "ألعاب الفيديو",
+    "EnglishCart": "Shopping Cart",
+    "ArabicCart": "عربة التسوق",
+    "EnglishCheckout": "Secure checkout",
+    "ArabicCheckout": "إتمام شراء آمن"
+  },
+
+  "EnglishFilters": {
+    "Condition": "New",
+    "FreeShipping": "Free Shipping",
+    "Seller": "Amazon.eg",
+    "Sorting": "price-desc"
+  },
+
+  "Price": "15000"
+}

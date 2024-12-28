@@ -119,9 +119,15 @@ public class WebElementActionsHelper {
                 return true;
             });
             LogHelper.logInfoStep("Clearing the Text on Element ["+elementName+"]");
-        }catch (Exception e)
+        }catch (InvalidElementStateException e)
         {
-            LogHelper.logErrorStep("Failed to Clear the Text on Element ["+elementName+"]",e);
+            try{
+                ((JavascriptExecutor) driver).executeScript("arguments[0].setAttribute('value', '')",
+                        driver.findElement(locator));
+                LogHelper.logInfoStep("Clearing the Text on Element ["+elementName+"] Using JS");
+            }catch (Exception f){
+                LogHelper.logErrorStep("Failed to Clear the Text on Element ["+elementName+"]",e);
+            }
         }
     }
 }

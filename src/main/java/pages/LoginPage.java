@@ -52,13 +52,13 @@ public class LoginPage {
     @Step("Verify Login Page is Opened")
     public LoginPage verifyLoginPageIsOpened(String header)
     {
-        verifyLoginHeaderIsDisplayed(header);
+        verifyLoginHeader(header);
         return this;
     }
 
     //Private Methods
-    @Step("Verify Login Header is Displayed")
-    private LoginPage verifyLoginHeaderIsDisplayed (String header)
+    @Step("Verify Login Header")
+    private LoginPage verifyLoginHeader (String header)
     {
         CustomSoftAssert.assertTrue(action.readText(signInHeader).contains(header));
         return this;

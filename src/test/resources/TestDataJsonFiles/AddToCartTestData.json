@@ -1,0 +1,17 @@
+{
+  "Headers": {
+    "EnglishProducts": "Video Games",
+    "ArabicProducts": "ألعاب الفيديو",
+    "EnglishCart": "Shopping Cart",
+    "ArabicCart": "عربة التسوق"
+  },
+
+  "EnglishFilters": {
+    "Condition": "New",
+    "FreeShipping": "Free Shipping",
+    "Seller": "Amazon.eg",
+    "Sorting": "price-desc"
+  },
+
+  "Price": "15000"
+}

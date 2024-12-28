@@ -1,0 +1,13 @@
+{
+  "Headers": {
+    "EnglishProducts": "Video Games",
+    "ArabicProducts": "ألعاب الفيديو"
+  },
+
+  "EnglishFilters": {
+    "Condition": "New",
+    "FreeShipping": "Free Shipping",
+    "Seller": "Amazon.eg",
+    "Sorting": "price-desc"
+  }
+}

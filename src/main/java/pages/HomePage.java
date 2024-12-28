@@ -14,6 +14,7 @@ public class HomePage {
     //Variables
     WebDriver driver;
     WebElementsActions action;
+    int totalPrice;
 
     //Locators
     final private By signInMenu = By.id("nav-link-accountList");
@@ -23,6 +24,11 @@ public class HomePage {
     final private By englishLanguage = By.xpath("//div[@id='nav-flyout-icp']//a[@lang='en-AE']");
     final private By amazonLogo = By.id("nav-logo-sprites");
     final private By loggedInUsername = By.id("nav-link-accountList-nav-line-1");
+    final private By hamburgerAllMenu = By.id("nav-hamburger-menu");
+    final private By seeAllCategoriesMenu = By.xpath("//a[@aria-label='See All Categories']");
+    final private By videoGamesMenu = By.xpath("//a[@data-menu-id='16']");
+    final private By allVideoGamesLink = By.xpath("//ul[@data-menu-id='16']//li[3]/a");
+    final private By cartLink = By.id("nav-cart");
 
     //Constructor
     public HomePage(WebDriver driver)
@@ -59,6 +65,23 @@ public class HomePage {
                 .hoverOnElement(signInMenu)
                 .press(signInButton);
     return new LoginPage(driver);
+    }
+
+    @Step("Navigate To All Video Games From Menu")
+    public ProductsPage navigateToVideoGamesFromMenu ()
+    {
+        action
+                .press(hamburgerAllMenu)
+                .press(seeAllCategoriesMenu)
+                .pressUsingJs(videoGamesMenu)
+                .press(allVideoGamesLink);
+        return new ProductsPage(driver);
+    }
+
+    @Step("Open Cart Page")
+    public CartPage openCartPage() {
+        action.press(cartLink);
+        return new CartPage(driver,totalPrice);
     }
 
     //Validations
