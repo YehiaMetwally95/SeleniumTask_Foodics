@@ -10,8 +10,8 @@ import lombok.ToString;
 public class LoginResponsePojo {
 
     //variables
-    private String status;
     private String message;
-    private String sessionId;
-    private int userId;
+    private String token;
+    private String email;
+    private String mobile;
 }

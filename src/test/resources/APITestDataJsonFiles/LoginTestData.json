@@ -1,26 +1,18 @@
 {
   "User1": {
-    "UserID": "1",
     "Email": "merchant@foodics.com",
     "Password": "123456",
-    "Token": "Lyz22cfYKMetFhKQybx5HAmVimF1i0xO"
+    "Mobile": "966*****13"
   },
 
   "User2": {
-    "UserID": "10000",
     "Email": "yehia@gmail.com",
-    "Password": "anypass",
-    "Token": "anytoken"
-  },
-
-  "Statuses": {
-    "LoginSuccess": "success",
-    "LoginFailure": "error"
+    "Password": "anypass"
   },
 
   "Messages": {
-    "LoginSuccess": "Successful Login",
-    "LoginFailure": "Invalid username or password"
+    "LoginSuccess": null,
+    "LoginFailure": "These credentials do not match our records."
   },
 
   "ResponseCodes": {

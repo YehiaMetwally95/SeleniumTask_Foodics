@@ -15,10 +15,11 @@ public class GetInvalidUserDetails {
     @Test
     public void getInvalidUserDetails() throws JsonProcessingException {
         new WhoamiRequestModel()
-                .prepareWhoamiRequest(Integer.parseInt(json.getData("User2.UserID")))
-                .sendWhoamiRequest(json.getData("User2.SessionID"))
+                //Pass invalid User ID that not exists
+                .prepareWhoamiRequest(json.getData("User2.UserID"))
+                //Pass invalid Token
+                .sendWhoamiRequest(json.getData("User2.Token"))
                 .validateCodeFromResponse(Integer.parseInt(json.getData("ResponseCodes.WhoamiFailure")))
-                .validateStatusFromResponse(json.getData("Statuses.WhoamiFailure"))
                 .validateMassageFromResponse(json.getData("Messages.WhoamiFailure"))
                 .validateNoUserDetailsExistInResponse();
     }

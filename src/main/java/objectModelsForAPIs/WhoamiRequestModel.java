@@ -21,7 +21,7 @@ public class WhoamiRequestModel {
     String jsonBodyAsString;
     Response response;
     JsonMapper mapper;
-    Map<String,Integer > queryParam;
+    Map<String,String > queryParam;
 
     //ObjectsFromPojoClasses
     WhoamiRequestPojo requestObject;
@@ -29,18 +29,18 @@ public class WhoamiRequestModel {
 
 
     //Method to set Request with query parameter of userID
-    @Step("Set Request with query parameter of userID")
-    public WhoamiRequestModel prepareWhoamiRequest(int userId) {
+    @Step("Set Request with query parameter of email")
+    public WhoamiRequestModel prepareWhoamiRequest(String userEmail) {
         queryParam = new HashMap<>();
-        queryParam.put("id",userId);
+        queryParam.put("email",userEmail);
         return this;
     }
 
     //Method to Execute WhoAmI Request
     @Step("Send Request of WhoAmI")
-    public WhoamiResponseModel sendWhoamiRequest(String sessionID) throws JsonProcessingException {
+    public WhoamiResponseModel sendWhoamiRequest(String token) throws JsonProcessingException {
         response =
-                GetAuthRequest(whoamiEndpoint, queryParam, "Session-ID",null,null,sessionID);
+                GetAuthRequest(whoamiEndpoint, queryParam, "Bearer",null,null,token);
         jsonBodyAsString = getResponseBody(response);
 
         mapper = new JsonMapper();

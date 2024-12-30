@@ -15,11 +15,10 @@ public class GetUnAuthorizedUserDetails {
     @Test
     public void getUnAuthorizedUserDetails() throws JsonProcessingException {
         new WhoamiRequestModel()
-                .prepareWhoamiRequest(Integer.parseInt(json.getData("User1.UserID")))
-               //Don't pass the SessionID to Request
+                .prepareWhoamiRequest(json.getData("User1.UserID"))
+               //Don't pass the Token to Request
                 .sendWhoamiRequest(null)
                 .validateCodeFromResponse(Integer.parseInt(json.getData("ResponseCodes.WhoamiFailure")))
-                .validateStatusFromResponse(json.getData("Statuses.WhoamiFailure"))
                 .validateMassageFromResponse(json.getData("Messages.WhoamiFailure"))
                 .validateNoUserDetailsExistInResponse();
     }

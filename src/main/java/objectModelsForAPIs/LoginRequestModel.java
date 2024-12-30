@@ -25,11 +25,10 @@ public class LoginRequestModel {
 
     //Method to set Request Body by reading from Json File
     @Step("Prepare Login Request Body With Credentials")
-    public LoginRequestModel prepareLoginRequestWithCredentials(String userName,String passWord,String token) {
+    public LoginRequestModel prepareLoginRequestWithCredentials(String userEmail,String passWord) {
         requestObject = LoginRequestPojo.builder()
-                .username(userName)
+                .email(userEmail)
                 .password(passWord)
-                .token(token)
                 .build();
         return this;
     }

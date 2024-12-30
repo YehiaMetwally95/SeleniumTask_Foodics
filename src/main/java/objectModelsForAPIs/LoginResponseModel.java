@@ -29,45 +29,40 @@ public class LoginResponseModel {
         return this;
     }
 
-    @Step("ValidateStatusFromResponse")
-    public LoginResponseModel validateStatusFromResponse(String expectedStatus) {
-        CustomAssert.assertEquals(responseObject.getStatus(), expectedStatus);
-        return this;
-    }
-
     @Step("ValidateCodeFromResponse")
     public LoginResponseModel validateCodeFromResponse(int responseCody) {
         CustomAssert.assertEquals(getResponseCode(response), responseCody);
         return this;
     }
 
-    @Step("ValidateUserIDFromResponse")
-    public LoginResponseModel validateUserIDFromResponse(int user_id) {
-        CustomAssert.assertEquals(responseObject.getUserId(), user_id);
+    @Step("ValidateEmailFromResponse")
+    public LoginResponseModel validateEmailFromResponse(String email) {
+        CustomAssert.assertEquals(responseObject.getEmail(), email);
         return this;
     }
 
-    @Step("ValidateSessionIDExistsInResponse")
-    public LoginResponseModel validateSessionIDExistsInResponse() {
-        CustomAssert.assertTrue(responseObject.getSessionId() != null);
+    @Step("ValidateMobileFromResponse")
+    public LoginResponseModel validateMobileFromResponse(String mobile) {
+        CustomAssert.assertEquals(responseObject.getMobile(), mobile);
         return this;
     }
 
-    @Step("ValidateSessionIDExistsInResponse")
-    public LoginResponseModel validateSessionIdNotExistInResponse() {
-        CustomAssert.assertTrue(responseObject.getSessionId() == null);
+    @Step("Validate Token Exists In Response")
+    public LoginResponseModel validateTokenExistsInResponse() {
+        CustomAssert.assertTrue(responseObject.getToken() != null);
+        return this;
+    }
+
+    @Step("Validate Token Not Exists In Response")
+    public LoginResponseModel validateTokenNotExistInResponse() {
+        CustomAssert.assertTrue(responseObject.getToken() == null);
         return this;
     }
 
     //Getter Methods
-    @Step("Get Session ID from Response")
-    public String getSessionID() {
-        return responseObject.getSessionId();
-    }
-
-    @Step("Get User ID from Response")
-    public int getUserID() {
-        return responseObject.getUserId();
+    @Step("Get Token from Response")
+    public String getToken() {
+        return responseObject.getToken();
     }
 
     public LoginRequestPojo getRequestPojoObject() {

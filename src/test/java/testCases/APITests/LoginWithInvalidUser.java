@@ -13,11 +13,10 @@ public class LoginWithInvalidUser {
     @Test
     public void loginWithInvalidUser() throws JsonProcessingException {
         new LoginRequestModel()
-                .prepareLoginRequestWithCredentials(json.getData("User2.Email"),json.getData("User2.Password"),json.getData("User2.Token"))
+                .prepareLoginRequestWithCredentials(json.getData("User2.Email"),json.getData("User2.Password"))
                 .sendLoginRequest()
                 .validateCodeFromResponse(Integer.parseInt(json.getData("ResponseCodes.LoginFailure")))
-                .validateStatusFromResponse(json.getData("Statuses.LoginFailure"))
                 .validateMassageFromResponse(json.getData("Messages.LoginFailure"))
-                .validateSessionIdNotExistInResponse();
+                .validateTokenNotExistInResponse();
     }
 }
