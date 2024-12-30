@@ -37,8 +37,8 @@
 - Test Data Execution by reading test data from Json files whether Json data is represend as Simple Json Object or Array of Json Objects
 
 #### Create CI/CD Pipeline with GitHub Actions
-- Workflow that run UI Tests Remotely In Parallel Across Different Browsers, Check Allure Report from below link
-  - Check Generated Allure Report from this link 
+- Workflow that run UI Tests Remotely In Parallel Across Different Browsers
+  - Check Generated Allure Report from this link https://drive.google.com/drive/folders/1XjECTQ1P28dvcFMgivzbK6D87G9rQ-PK?usp=sharing
 - Workflow that run UI Tests Remotely In Sequence
   - Check Generated Allure Report from this link https://drive.google.com/drive/folders/12PUv04NAKOrqXdSddDieOMFYpKO_6sWX?usp=sharing
 - Run Workflows on Different Triggers: after every Push, after every Pull Request and Manually
