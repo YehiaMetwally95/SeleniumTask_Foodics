@@ -50,7 +50,7 @@
 ##### 1- Download Allure Report from here https://github.com/allure-framework/allure2/releases
 ##### 2- Download Docker from here https://docs.docker.com/desktop/setup/install/windows-install/
 ##### 3- Download Apache Maven from here https://maven.apache.org/download.cgi
-##### 4- Add All bin Directories of Allure , Docker & Maven in Environmental Variables like the below screen ![img_1.png](img_1.png)
+##### 4- Add All bin Directories of Allure , Docker & Maven in Environmental Variables like the below screen ! ![img.png](img.png)
 ##### 5- Docker Must be Run on your machine
 ##### 6 To Setup Selenium Grid with Docker Container in order to Run Tests Remotely, Just run the following command in Intellij Terminal
 ```bash
