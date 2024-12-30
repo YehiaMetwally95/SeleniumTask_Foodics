@@ -10,7 +10,7 @@ import static yehiaEngine.driverManager.BrowserFactory.getDriver;
 
 public class FilterProducts extends BaseTest {
     //Variables
-    final private String filterTestDataFilePath = "src/test/resources/TestDataJsonFiles/FilterTestData.json";
+    final private String filterTestDataFilePath = "src/test/resources/AmazonTestDataJsonFiles/FilterTestData.json";
     final private JsonManager json = new JsonManager(filterTestDataFilePath);
 
     //Tests

@@ -49,7 +49,7 @@ public class CartPage {
     public CartPage removeAllOldProductsFromCart() throws InterruptedException {
         while(action.isElementDisplayedWithoutWait(deleteButton)) {
             action.press(deleteButton);
-            Thread.sleep(1000);
+            refreshWindow(driver);
         }
         return this;
     }

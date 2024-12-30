@@ -30,21 +30,84 @@ public class BrowserFactory {
         ITestContext context = result.getTestContext();
         if (executionType.equalsIgnoreCase("Local") || executionType.equalsIgnoreCase("LocalHeadless"))
         {
-            switch (browserType)
+            switch (BrowserFactory.browserType)
             {
                 case "Chrome" :
                     driver.set(new ChromeDriver(getChromeOptions()));
-                    LogHelper.logInfoStep("Starting "+ browserType +" Browser ............");
+                    LogHelper.logInfoStep("Starting "+ BrowserFactory.browserType +" Browser ............");
                     break;
 
                 case "Firefox" :
                     driver.set(new FirefoxDriver(getFireFoxOptions()));
-                    LogHelper.logInfoStep("Starting "+ browserType +" Browser ............");
+                    LogHelper.logInfoStep("Starting "+ BrowserFactory.browserType +" Browser ............");
                     break;
 
                 case "Edge" :
                     driver.set(new EdgeDriver(getEdgeOptions()));
-                    LogHelper.logInfoStep("Starting "+ browserType +" Browser ............");
+                    LogHelper.logInfoStep("Starting "+ BrowserFactory.browserType +" Browser ............");
+                    break;
+                default:
+                    LogHelper.logErrorStep("Failed to Start Browser, The Input Browser Name is Incorrect");
+            }
+        }
+
+        else if (executionType.equalsIgnoreCase("Remote"))
+        {
+            switch (BrowserFactory.browserType)
+            {
+                case "Chrome" :
+                    driver.set(new RemoteWebDriver(
+                            new URL("http://" + remoteExecutionHost + ":" + remoteExecutionPort + "/wd/hub")
+                            ,getChromeOptions()));
+                    driver.get().setFileDetector(new LocalFileDetector());
+                    LogHelper.logInfoStep("Starting "+ BrowserFactory.browserType +" Browser ............");
+                    break;
+
+                case "Firefox" :
+                    driver.set(new RemoteWebDriver(
+                            new URL("http://" + remoteExecutionHost + ":" + remoteExecutionPort + "/wd/hub")
+                            ,getFireFoxOptions()));
+                    driver.get().setFileDetector(new LocalFileDetector());
+                    LogHelper.logInfoStep("Starting "+ BrowserFactory.browserType +" Browser ............");
+                    break;
+
+                case "Edge" :
+                    driver.set(new RemoteWebDriver(
+                            new URL("http://" + remoteExecutionHost + ":" + remoteExecutionPort + "/wd/hub")
+                            ,getEdgeOptions()));
+                    driver.get().setFileDetector(new LocalFileDetector());
+                    LogHelper.logInfoStep("Starting "+ BrowserFactory.browserType +" Browser ............");
+                    break;
+                default:
+                    LogHelper.logErrorStep("Failed to Start Browser, The Input Browser Name is Incorrect");
+            }
+        }
+        //Set the Logger Classes with the driver
+        context.setAttribute("isolatedWebDriver",driver);
+
+        return driver;
+    }
+
+    public static ThreadLocal<RemoteWebDriver> openBrowser(String browserType) throws MalformedURLException {
+        ITestResult result = Reporter.getCurrentTestResult();
+        ITestContext context = result.getTestContext();
+        if (executionType.equalsIgnoreCase("Local") || executionType.equalsIgnoreCase("LocalHeadless"))
+        {
+            switch (browserType)
+            {
+                case "Chrome" :
+                    driver.set(new ChromeDriver(getChromeOptions()));
+                    LogHelper.logInfoStep("Starting "+ BrowserFactory.browserType +" Browser ............");
+                    break;
+
+                case "Firefox" :
+                    driver.set(new FirefoxDriver(getFireFoxOptions()));
+                    LogHelper.logInfoStep("Starting "+ BrowserFactory.browserType +" Browser ............");
+                    break;
+
+                case "Edge" :
+                    driver.set(new EdgeDriver(getEdgeOptions()));
+                    LogHelper.logInfoStep("Starting "+ BrowserFactory.browserType +" Browser ............");
                     break;
                 default:
                     LogHelper.logErrorStep("Failed to Start Browser, The Input Browser Name is Incorrect");
@@ -60,7 +123,7 @@ public class BrowserFactory {
                             new URL("http://" + remoteExecutionHost + ":" + remoteExecutionPort + "/wd/hub")
                             ,getChromeOptions()));
                     driver.get().setFileDetector(new LocalFileDetector());
-                    LogHelper.logInfoStep("Starting "+ browserType +" Browser ............");
+                    LogHelper.logInfoStep("Starting "+ BrowserFactory.browserType +" Browser ............");
                     break;
 
                 case "Firefox" :
@@ -68,7 +131,7 @@ public class BrowserFactory {
                             new URL("http://" + remoteExecutionHost + ":" + remoteExecutionPort + "/wd/hub")
                             ,getFireFoxOptions()));
                     driver.get().setFileDetector(new LocalFileDetector());
-                    LogHelper.logInfoStep("Starting "+ browserType +" Browser ............");
+                    LogHelper.logInfoStep("Starting "+ BrowserFactory.browserType +" Browser ............");
                     break;
 
                 case "Edge" :
@@ -76,7 +139,7 @@ public class BrowserFactory {
                             new URL("http://" + remoteExecutionHost + ":" + remoteExecutionPort + "/wd/hub")
                             ,getEdgeOptions()));
                     driver.get().setFileDetector(new LocalFileDetector());
-                    LogHelper.logInfoStep("Starting "+ browserType +" Browser ............");
+                    LogHelper.logInfoStep("Starting "+ BrowserFactory.browserType +" Browser ............");
                     break;
                 default:
                     LogHelper.logErrorStep("Failed to Start Browser, The Input Browser Name is Incorrect");
@@ -87,6 +150,7 @@ public class BrowserFactory {
 
         return driver;
     }
+
 
     private static ChromeOptions getChromeOptions()
     {

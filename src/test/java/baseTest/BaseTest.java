@@ -1,8 +1,7 @@
 package baseTest;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 
 import java.net.MalformedURLException;
 
@@ -15,10 +14,11 @@ public class BaseTest {
     //Variables
     protected ThreadLocal<RemoteWebDriver> isolatedDriver;
 
+    @Parameters({"BrowserType"})
     @BeforeMethod
-    public void setUpAndOpenBrowser() throws MalformedURLException {
+    public void setUpAndOpenBrowser(@Optional String browserType) throws MalformedURLException {
         //Open Browser
-        isolatedDriver = openBrowser();
+        isolatedDriver = openBrowser(browserType);
 
         //Navigate to Website URL
         navigateToURL(getDriver(isolatedDriver),getPropertiesValue("baseUrlWeb"));

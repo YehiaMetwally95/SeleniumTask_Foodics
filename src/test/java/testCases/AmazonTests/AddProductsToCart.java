@@ -10,7 +10,7 @@ import static yehiaEngine.driverManager.BrowserFactory.getDriver;
 
 public class AddProductsToCart extends BaseTest {
     //Variables
-    final private String AddToCartTestDataFilePath = "src/test/resources/TestDataJsonFiles/AddToCartTestData.json";
+    final private String AddToCartTestDataFilePath = "src/test/resources/AmazonTestDataJsonFiles/AddToCartTestData.json";
     final private JsonManager json = new JsonManager(AddToCartTestDataFilePath);
 
     //Tests

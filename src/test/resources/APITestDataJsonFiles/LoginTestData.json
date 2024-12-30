@@ -1,0 +1,30 @@
+{
+  "User1": {
+    "UserID": "1",
+    "Email": "merchant@foodics.com",
+    "Password": "123456",
+    "Token": "Lyz22cfYKMetFhKQybx5HAmVimF1i0xO"
+  },
+
+  "User2": {
+    "UserID": "10000",
+    "Email": "yehia@gmail.com",
+    "Password": "anypass",
+    "Token": "anytoken"
+  },
+
+  "Statuses": {
+    "LoginSuccess": "success",
+    "LoginFailure": "error"
+  },
+
+  "Messages": {
+    "LoginSuccess": "Successful Login",
+    "LoginFailure": "Invalid username or password"
+  },
+
+  "ResponseCodes": {
+    "LoginSuccess": "200",
+    "LoginFailure": "401"
+  }
+}

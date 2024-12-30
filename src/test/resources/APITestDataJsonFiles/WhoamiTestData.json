@@ -1,0 +1,42 @@
+{
+  "User1": {
+    "UserID": "1",
+    "Email": "merchant@foodics.com",
+    "Password": "123456",
+    "Token": "Lyz22cfYKMetFhKQybx5HAmVimF1i0xO",
+    "FullName": "Test Merchant",
+    "Mobile": "0512312312",
+    "Company": "Foodics",
+    "DateOfBirth": "22-10-1970"
+  },
+
+  "User2": {
+    "UserID": "10000",
+    "Email": "yehia@gmail.com",
+    "Password": "anypass",
+    "Token": "anytoken",
+    "SessionID": "anySessionID"
+  },
+
+  "Statuses": {
+    "LoginSuccess": "success",
+    "LoginFailure": "error",
+    "WhoamiSuccess": "success",
+    "WhoamiFailure": "error"
+
+  },
+
+  "Messages": {
+    "LoginSuccess": "Successful Login",
+    "LoginFailure": "Invalid username or password",
+    "WhoamiSuccess": "Data Retrieved Successfully",
+    "WhoamiFailure": "Data Not Retrieved"
+  },
+
+  "ResponseCodes": {
+    "LoginSuccess": "200",
+    "LoginFailure": "401",
+    "WhoamiSuccess": "200",
+    "WhoamiFailure": "401"
+  }
+}

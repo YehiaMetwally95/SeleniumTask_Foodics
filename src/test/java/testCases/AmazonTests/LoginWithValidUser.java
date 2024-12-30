@@ -10,7 +10,7 @@ import static yehiaEngine.driverManager.BrowserFactory.getDriver;
 
 public class LoginWithValidUser extends BaseTest {
     //Variables
-    final private String loginTestDataFilePath = "src/test/resources/TestDataJsonFiles/LoginTestData.json";
+    final private String loginTestDataFilePath = "src/test/resources/AmazonTestDataJsonFiles/LoginTestData.json";
     final private JsonManager json = new JsonManager(loginTestDataFilePath);
 
     //Tests

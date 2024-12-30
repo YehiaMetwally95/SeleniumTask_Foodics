@@ -15,7 +15,7 @@ import static yehiaEngine.driverManager.BrowserFactory.getDriver;
 
 public class CheckOutCart extends BaseTest {
     //Variables
-    final private String CheckOutTestDataFilePath = "src/test/resources/TestDataJsonFiles/CheckOutTestData.json";
+    final private String CheckOutTestDataFilePath = "src/test/resources/AmazonTestDataJsonFiles/CheckOutTestData.json";
     final private JsonManager json = new JsonManager(CheckOutTestDataFilePath);
 
     @BeforeMethod
