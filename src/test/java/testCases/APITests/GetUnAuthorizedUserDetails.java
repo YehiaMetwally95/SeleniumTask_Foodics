@@ -13,9 +13,10 @@ public class GetUnAuthorizedUserDetails {
     JsonManager json = new JsonManager(jsonFilePathForWhoamiTestData);
 
     @Test
-    public void getValidUserDetails() throws JsonProcessingException {
+    public void getUnAuthorizedUserDetails() throws JsonProcessingException {
         new WhoamiRequestModel()
                 .prepareWhoamiRequest(Integer.parseInt(json.getData("User1.UserID")))
+               //Don't pass the SessionID to Request
                 .sendWhoamiRequest(null)
                 .validateCodeFromResponse(Integer.parseInt(json.getData("ResponseCodes.WhoamiFailure")))
                 .validateStatusFromResponse(json.getData("Statuses.WhoamiFailure"))
