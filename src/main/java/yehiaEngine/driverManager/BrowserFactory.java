@@ -20,7 +20,7 @@ import java.net.URL;
 public class BrowserFactory {
     private static final ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();;
 
-    private static final String browserType = System.getProperty("browserType");
+    private static String browserType = System.getProperty("browserType");
     private static final String executionType = System.getProperty("executionType");
     private static final String remoteExecutionHost = System.getProperty("remoteExecutionHost");
     private static final String remoteExecutionPort = System.getProperty("remoteExecutionPort");
@@ -28,6 +28,7 @@ public class BrowserFactory {
     public static ThreadLocal<RemoteWebDriver> openBrowser() throws MalformedURLException {
         ITestResult result = Reporter.getCurrentTestResult();
         ITestContext context = result.getTestContext();
+
         if (executionType.equalsIgnoreCase("Local") || executionType.equalsIgnoreCase("LocalHeadless"))
         {
             switch (BrowserFactory.browserType)
@@ -91,9 +92,12 @@ public class BrowserFactory {
     public static ThreadLocal<RemoteWebDriver> openBrowser(String browserType) throws MalformedURLException {
         ITestResult result = Reporter.getCurrentTestResult();
         ITestContext context = result.getTestContext();
+        if (browserType != null && !browserType.isEmpty())
+            BrowserFactory.browserType = browserType;
+
         if (executionType.equalsIgnoreCase("Local") || executionType.equalsIgnoreCase("LocalHeadless"))
         {
-            switch (browserType)
+            switch (BrowserFactory.browserType)
             {
                 case "Chrome" :
                     driver.set(new ChromeDriver(getChromeOptions()));
@@ -116,7 +120,7 @@ public class BrowserFactory {
 
         else if (executionType.equalsIgnoreCase("Remote"))
         {
-            switch (browserType)
+            switch (BrowserFactory.browserType)
             {
                 case "Chrome" :
                     driver.set(new RemoteWebDriver(
