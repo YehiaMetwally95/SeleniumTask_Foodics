@@ -15,8 +15,8 @@ public class GetInvalidUserDetails {
     @Test
     public void getInvalidUserDetails() throws JsonProcessingException {
         new WhoamiRequestModel()
-                //Pass invalid User ID that not exists
-                .prepareWhoamiRequest(json.getData("User2.UserID"))
+                //Pass invalid Email that not exists
+                .prepareWhoamiRequest(json.getData("User2.Email"))
                 //Pass invalid Token
                 .sendWhoamiRequest(json.getData("User2.Token"))
                 .validateCodeFromResponse(Integer.parseInt(json.getData("ResponseCodes.WhoamiFailure")))

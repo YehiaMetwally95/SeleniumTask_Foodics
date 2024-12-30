@@ -15,7 +15,7 @@ public class GetUnAuthorizedUserDetails {
     @Test
     public void getUnAuthorizedUserDetails() throws JsonProcessingException {
         new WhoamiRequestModel()
-                .prepareWhoamiRequest(json.getData("User1.UserID"))
+                .prepareWhoamiRequest(json.getData("User1.Email"))
                //Don't pass the Token to Request
                 .sendWhoamiRequest(null)
                 .validateCodeFromResponse(Integer.parseInt(json.getData("ResponseCodes.WhoamiFailure")))

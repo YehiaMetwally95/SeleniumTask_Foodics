@@ -1,6 +1,5 @@
 {
   "User1": {
-    "UserID": "1",
     "Email": "merchant@foodics.com",
     "Password": "123456",
     "FullName": "Test Merchant",
@@ -10,7 +9,6 @@
   },
 
   "User2": {
-    "UserID": "10000",
     "Email": "yehia@gmail.com",
     "Password": "anypass",
     "Token": "anyToken"
