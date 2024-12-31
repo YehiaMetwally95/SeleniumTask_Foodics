@@ -14,6 +14,6 @@ import lombok.extern.jackson.Jacksonized;
 public class LoginRequestPojo {
 
     //variables
-    private String email;
+    private String username;
     private String password;
 }

@@ -11,6 +11,6 @@ import lombok.extern.jackson.Jacksonized;
 @ToString
 @Jacksonized
 @Builder
-public class WhoamiRequestPojo {
-    //variables
+public class GetBookingRequestPojo {
+
 }

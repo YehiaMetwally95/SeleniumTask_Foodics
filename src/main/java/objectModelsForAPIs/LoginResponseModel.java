@@ -23,27 +23,15 @@ public class LoginResponseModel {
     }
 
     //Validation Methods
-    @Step("ValidateMassageFromResponse")
+    @Step("Validate Massage From Response")
     public LoginResponseModel validateMassageFromResponse(String expectedMessage) {
-        CustomAssert.assertEquals(responseObject.getMessage(), expectedMessage);
+        CustomAssert.assertEquals(responseObject.getReason(), expectedMessage);
         return this;
     }
 
-    @Step("ValidateCodeFromResponse")
+    @Step("Validate Code From Response")
     public LoginResponseModel validateCodeFromResponse(int responseCody) {
         CustomAssert.assertEquals(getResponseCode(response), responseCody);
-        return this;
-    }
-
-    @Step("ValidateEmailFromResponse")
-    public LoginResponseModel validateEmailFromResponse(String email) {
-        CustomAssert.assertEquals(responseObject.getEmail(), email);
-        return this;
-    }
-
-    @Step("ValidateMobileFromResponse")
-    public LoginResponseModel validateMobileFromResponse(String mobile) {
-        CustomAssert.assertEquals(responseObject.getMobile(), mobile);
         return this;
     }
 

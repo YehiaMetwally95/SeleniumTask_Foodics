@@ -13,7 +13,7 @@ public class LoginWithInvalidUser {
     @Test
     public void loginWithInvalidUser() throws JsonProcessingException {
         new LoginRequestModel()
-                .prepareLoginRequestWithCredentials(json.getData("User2.Email"),json.getData("User2.Password"))
+                .prepareLoginRequestWithCredentials(json.getData("InvalidUser.Username"),json.getData("InvalidUser.Password"))
                 .sendLoginRequest()
                 .validateCodeFromResponse(Integer.parseInt(json.getData("ResponseCodes.LoginFailure")))
                 .validateMassageFromResponse(json.getData("Messages.LoginFailure"))

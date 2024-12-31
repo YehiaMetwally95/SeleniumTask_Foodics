@@ -1,0 +1,16 @@
+{
+  "BookingData": {
+    "FirstName": "Yehia",
+    "LastName": "Metwally",
+    "TotalPrice": "50000",
+    "DepositPaid": "true",
+    "CheckInDate": "2018-01-13",
+    "CheckOutDate": "2019-01-01",
+    "AdditionalNeeds": "Dinner"
+  },
+
+  "ResponseCodes": {
+    "CreateNewBookingSuccess": "200",
+    "GetBookingSuccess": "200"
+  }
+}

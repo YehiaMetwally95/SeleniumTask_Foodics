@@ -6,15 +6,19 @@ import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import pojoClassesForAPIs.LoginRequestPojo;
 import pojoClassesForAPIs.LoginResponsePojo;
-
 import static yehiaEngine.managers.ApisManager.MakeRequest;
 import static yehiaEngine.managers.ApisManager.getResponseBody;
 import static yehiaEngine.managers.PropertiesManager.getPropertiesValue;
+import static yehiaEngine.managers.ApisManager.MethodType.*;
+import static yehiaEngine.managers.ApisManager.AuthType.*;
+import static yehiaEngine.managers.ApisManager.ContentType.*;
+import static yehiaEngine.managers.ApisManager.ParameterType.*;
+
 
 public class LoginRequestModel {
 
     //Variables
-    String loginEndpoint = getPropertiesValue("baseUrlApi")+"/login";
+    String loginEndpoint = getPropertiesValue("baseUrlApi")+"/auth";
     String jsonBodyAsString;
     Response response;
     JsonMapper mapper;
@@ -23,11 +27,11 @@ public class LoginRequestModel {
     LoginRequestPojo requestObject;
     LoginResponsePojo responseObject;
 
-    //Method to set Request Body by reading from Json File
+    //Method to set Request Body using Builder Pattern
     @Step("Prepare Login Request Body With Credentials")
-    public LoginRequestModel prepareLoginRequestWithCredentials(String userEmail,String passWord) {
+    public LoginRequestModel prepareLoginRequestWithCredentials(String userName,String passWord) {
         requestObject = LoginRequestPojo.builder()
-                .email(userEmail)
+                .username(userName)
                 .password(passWord)
                 .build();
         return this;
@@ -36,10 +40,13 @@ public class LoginRequestModel {
     //Method to Execute Login Request
     @Step("Send Request of Login")
     public LoginResponseModel sendLoginRequest() throws JsonProcessingException {
-        response =
-                MakeRequest("Post", loginEndpoint, requestObject, "application/json");
+        //Send Login Request
+        response = MakeRequest(POST, loginEndpoint, requestObject, JSON);
+
+        //Get Response Body as JsonString from Response
         jsonBodyAsString = getResponseBody(response);
 
+        //Deserialize Response JsonString into Pojo Object
         mapper = new JsonMapper();
         responseObject = mapper.readValue(jsonBodyAsString, LoginResponsePojo.class);
 

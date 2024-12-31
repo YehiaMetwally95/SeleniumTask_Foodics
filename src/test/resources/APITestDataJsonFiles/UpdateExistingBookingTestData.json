@@ -1,0 +1,35 @@
+{
+  "OldBookingData": {
+    "FirstName": "Yehia",
+    "LastName": "Metwally",
+    "TotalPrice": "50000",
+    "DepositPaid": "true",
+    "CheckInDate": "2018-01-13",
+    "CheckOutDate": "2019-01-01",
+    "AdditionalNeeds": "Dinner"
+  },
+  "NewBookingData": {
+    "FirstName": "Ahmed",
+    "LastName": "Mostafa",
+    "TotalPrice": "220",
+    "DepositPaid": "false",
+    "CheckInDate": "2012-03-13",
+    "CheckOutDate": "2015-06-01",
+    "AdditionalNeeds": "Lunch"
+  },
+  "ValidUser": {
+    "Username": "admin",
+    "Password": "password123",
+    "Token": "e10b8ceac228160"
+  },
+  "Messages": {
+    "LoginFailure": "Bad credentials"
+  },
+  "ResponseCodes": {
+    "LoginSuccess": "200",
+    "LoginFailure": "200",
+    "CreateNewBookingSuccess": "200",
+    "GetBookingSuccess": "200",
+    "UpdateBookingSuccess": "200"
+  }
+}

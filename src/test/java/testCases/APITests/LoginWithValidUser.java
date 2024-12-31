@@ -2,6 +2,7 @@ package testCases.APITests;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import objectModelsForAPIs.LoginRequestModel;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import pojoClassesForAPIs.LoginResponsePojo;
 import yehiaEngine.managers.JsonManager;
@@ -16,12 +17,13 @@ public class LoginWithValidUser {
     public void loginWithValidUser() throws JsonProcessingException {
         token =
         new LoginRequestModel()
-                .prepareLoginRequestWithCredentials(json.getData("User1.Email"),json.getData("User1.Password"))
+                .prepareLoginRequestWithCredentials(json.getData("ValidUser.Username"),json.getData("ValidUser.Password"))
                 .sendLoginRequest()
                 .validateCodeFromResponse(Integer.parseInt(json.getData("ResponseCodes.LoginSuccess")))
-                .validateMassageFromResponse(json.getData("Messages.LoginSuccess"))
-                .validateMobileFromResponse(json.getData("User1.Mobile"))
                 .validateTokenExistsInResponse()
                 .getToken();
+
+        //Store Token Into Json File
+        json.setData("ValidUser.Token",token);
     }
 }
