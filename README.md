@@ -21,7 +21,7 @@
 
 ## Application Under Test
 - Website --> https://www.amazon.eg/
-- API --> https://pay2.foodics.dev/cp_internal/
+- API --> https://restful-booker.herokuapp.com/apidoc/index.html
 
 ## Features
 #### Structure of "test folder"
@@ -41,6 +41,8 @@
   - Check Generated Allure Report from this link https://drive.google.com/drive/folders/1XjECTQ1P28dvcFMgivzbK6D87G9rQ-PK?usp=sharing
 - Workflow that run UI Tests Remotely In Sequence
   - Check Generated Allure Report from this link https://drive.google.com/drive/folders/12PUv04NAKOrqXdSddDieOMFYpKO_6sWX?usp=sharing
+- Workflow that run API Tests Remotely In Parallel
+  - Check Generated Allure Report from this link https://drive.google.com/drive/folders/1zih9XTHoTx2ik8eNxT-hvg196VVMV7Q3?usp=sharing
 - Run Workflows on Different Triggers: after every Push, after every Pull Request and Manually
 - Generate the Allure Reports after every Workflow run such that
     - Separate Reports for Tests related to a Single Job
